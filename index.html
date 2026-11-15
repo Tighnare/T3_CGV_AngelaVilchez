@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Angela Vilchez - T3</title>
+  <style>
+    html, body { margin: 0; height: 100%; overflow: hidden; background: #111; font-family: Arial, sans-serif; }
+    #menu { position: fixed; inset: 0; display: grid; place-items: center; background: #000a; color: white; z-index: 3; cursor: pointer; }
+    #menu div { background: #111d; padding: 20px 28px; border-radius: 12px; text-align: center; line-height: 1.7; }
+    #crosshair { position: fixed; left: 50%; top: 50%; width: 18px; height: 18px; transform: translate(-50%, -50%); z-index: 2; pointer-events: none; }
+    #crosshair::before, #crosshair::after { content: ''; position: absolute; background: white; }
+    #crosshair::before { width: 18px; height: 2px; top: 8px; left: 0; }
+    #crosshair::after { width: 2px; height: 18px; top: 0; left: 8px; }
+    #hud { position: fixed; right: 24px; bottom: 20px; color: white; font-size: 28px; font-weight: bold; text-align: right; text-shadow: 0 0 6px #000; z-index: 2; pointer-events: none; }
+    #message { position: fixed; inset: 0; display: none; place-items: center; z-index: 4; color: white; font-size: 44px; font-weight: bold; text-align: center; background: #000b; }
+    canvas { display: block; }
+  </style>
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.module.js",
+      "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.180.0/examples/jsm/"
+    }
+  }
+  </script>
+</head>
+<body>
+  <div id="menu">
+    <div>
+      <b>Misión: SOBREVIVENCIA</b><br>
+      Luego de haber sobrevivido a la primera oleada, te encuentras en un almacén de madera abandonado
+      donde decidiste esconderte, pero necesitas empezar a moverte y salir nuevamente porque
+      el lugar se llenó de... Zombies!!.
+      Intenta encargarte de... ELLOS y llegar hasta el ascensor. Buena suerte.<br>
+      Haz clic para entrar<br>
+      WASD: moverse · Mouse: mirar · Clic izquierdo: disparar · 1 / 2: cambiar de arma
+    </div>
+  </div>
+  <div id="crosshair"></div>
+  <div id="hud"></div>
+  <div id="message"></div>
+  <script type="module" src="./main.js"></script>
+</body>
+</html>
